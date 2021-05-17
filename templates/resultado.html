@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style_index.css') }}">
+    <title> Busca de CEP</title>
+</head>
+
+<body>
+    <div class="principal">
+        <h1>Resultado da sua busca</h1>
+        <div class="resultados">
+            <p>CEP: {{resultado_get.cep}}</p>
+            <p>Rua: {{resultado_get.logradouro}}</p>
+            {% if resultado_get.complemento %}
+            <p>Complemento: {{resultado_get.complemento}}</p>
+            {% endif %}
+            <p>Bairro: {{resultado_get.bairro}}</p>
+            <p>Cidade: {{resultado_get.localidade}}</p>
+            <p>Estado: {{resultado_get.uf}}</p>
+        </div>
+    </div>
+</body>
+
+</html>
